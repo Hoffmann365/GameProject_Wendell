@@ -11,8 +11,9 @@ public class Player : MonoBehaviour
     
     private bool isJumping;
     private bool doublejump;
+    private bool isAtk;
 
-    private float movement;
+    public static float movement;
 
     private Rigidbody2D rig;
     private Animator anim;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Jump();
+        Attack();
     }
 
     private void FixedUpdate()
@@ -60,11 +62,11 @@ public class Player : MonoBehaviour
             {
                 anim.SetInteger("transition", 1);
             }
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            transform.eulerAngles = new Vector3(0,180,0);
         }
         
         //parado
-        if (movement == 0 && !isJumping)
+        if (movement == 0 && !isJumping && !isAtk)
         {
             anim.SetInteger("transition", 0);
         }
@@ -94,6 +96,23 @@ public class Player : MonoBehaviour
         }
 
     }
+    
+    void Attack()
+        {
+            StartCoroutine("Atk");
+        }
+    
+        IEnumerator Atk()
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                isAtk = true;
+                anim.SetInteger("transition", 3);
+                yield return new WaitForSeconds(0.55f);
+                isAtk = false;
+                anim.SetInteger("transition", 0);
+            }
+        }
     
     void OnCollisionEnter2D(Collision2D coll)
     {
