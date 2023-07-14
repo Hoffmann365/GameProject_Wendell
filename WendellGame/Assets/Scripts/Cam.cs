@@ -17,7 +17,7 @@ public class Cam : MonoBehaviour
     {
         if(player.position.x >= -20 && player.position.x < 200)
         {
-            Vector3 following = new Vector3(player.position.x, transform.position.y, transform.position.z);
+            Vector3 following = new Vector3(player.position.x, player.position.y, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, following, smooth * Time.deltaTime);
         }
     }
