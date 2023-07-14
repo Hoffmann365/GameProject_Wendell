@@ -186,4 +186,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   walktime: 1
-  health: 4
+  health: 1
