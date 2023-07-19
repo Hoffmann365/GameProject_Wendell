@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,21 +8,27 @@ public class Enemy : MonoBehaviour
 
     public float speed;
     public float walktime;
+    public int damage = 1;
 
     private float timer;
 
     private bool walkRight = true;
+    private bool alive = true;
     
     public int health;
 
     private Rigidbody2D rig;
     private Animator anim;
+    private BoxCollider2D colliderEnemy;
+    private CircleCollider2D colliderEnemyC;
 
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        colliderEnemy = GetComponent<BoxCollider2D>();
+        colliderEnemyC = GetComponent<CircleCollider2D>();
 
     }
 
@@ -60,9 +67,21 @@ public class Enemy : MonoBehaviour
 
     IEnumerator die()
     {
+        alive = false;
+        rig.gravityScale = 0;
+        colliderEnemy.isTrigger = true;
+        colliderEnemyC.isTrigger = true;
         speed = 0;
         anim.SetTrigger("death");
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (alive == true)
+        {
+            collision.gameObject.GetComponent<Player>().Damage(damage);
+        }
     }
 }
