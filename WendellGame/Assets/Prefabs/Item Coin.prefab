@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4643038601946177257
+--- !u!1 &1785254956720909009
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4643038601946177236}
-  - component: {fileID: 4643038601946177237}
-  - component: {fileID: 4643038601946177258}
-  - component: {fileID: 4643038601946177259}
-  - component: {fileID: 4643038601946177256}
+  - component: {fileID: 1785254956720909006}
+  - component: {fileID: 1785254956720909005}
+  - component: {fileID: 1785254956720909004}
+  - component: {fileID: 1785254956720909011}
+  - component: {fileID: 1785254956720909010}
   m_Layer: 0
-  m_Name: Item Heart
+  m_Name: Item Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4643038601946177236
+--- !u!4 &1785254956720909006
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4643038601946177257}
+  m_GameObject: {fileID: 1785254956720909009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.21, y: -2.09, z: 0}
-  m_LocalScale: {x: 7.549696, y: 7.549696, z: 7.549696}
+  m_LocalPosition: {x: -16.35, y: -2.07, z: 0}
+  m_LocalScale: {x: 5.583894, y: 5.583894, z: 5.583894}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4643038601946177237
+--- !u!212 &1785254956720909005
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4643038601946177257}
+  m_GameObject: {fileID: 1785254956720909009}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,28 +76,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 4b2f3fd3f432ad148a82601664db75b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4cf6c7909f7aac44924d6bdc2f178c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.1, y: 0.09}
+  m_Size: {x: 0.08, y: 0.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4643038601946177258
+--- !u!95 &1785254956720909004
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4643038601946177257}
+  m_GameObject: {fileID: 1785254956720909009}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 966b6ab1245f66f48b8dec8f018b787a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 726ec5ab02c4214408e38f9b1738543b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107,32 +107,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &4643038601946177259
+--- !u!58 &1785254956720909011
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4643038601946177257}
+  m_GameObject: {fileID: 1785254956720909009}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.003}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.042
---- !u!114 &4643038601946177256
+  m_Radius: 0.04
+--- !u!114 &1785254956720909010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4643038601946177257}
+  m_GameObject: {fileID: 1785254956720909009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21da413d39770be4088057f4d14b18e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ea1a2ef715a5bb439bbf317699cdcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthValue: 2
+  coinValue: 1
