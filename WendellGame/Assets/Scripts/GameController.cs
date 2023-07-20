@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour
 {
 
     public Text healthText;
+    public int score;
+    public Text scoreText;
 
     public static GameController instance; 
     // Start is called before the first frame update
@@ -21,6 +23,12 @@ public class GameController : MonoBehaviour
         
     }
 
+    public void UpdateScore(int value)
+    {
+        score += value;
+        scoreText.text = score.ToString();
+    }
+    
     public void UpdateLives(int value)
     {
         healthText.text = "x " + value.ToString();
