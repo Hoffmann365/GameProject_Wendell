@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        respawnPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        respawnPoint = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
         
         GameController.instance.UpdateLives(health);
     }
@@ -138,7 +138,9 @@ public class Player : MonoBehaviour
             if (health <= 0)
             {
                 //chamar o game over
-                
+                health = 0;
+                GameController.instance.UpdateLives(health);
+                GameController.instance.GameOver();
             }
         }
 
@@ -167,7 +169,7 @@ public class Player : MonoBehaviour
         else if (collider.gameObject.tag == "Checkpoint")
         {
             collider.gameObject.GetComponent<Checkpoint>().Activate();
-            respawnPoint = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y + 1, collider.gameObject.transform.position.z);
+            respawnPoint = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, collider.gameObject.transform.position.z);
         }
     }
 }

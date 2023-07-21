@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -13,7 +14,12 @@ public class GameController : MonoBehaviour
 
     public int totalScore;
 
-    public static GameController instance; 
+    public static GameController instance;
+
+    private bool isPaused;
+
+    public GameObject gameoverObj;
+    public GameObject pauseObj;
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,7 +35,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        PauseGame();
     }
 
     public void UpdateScore(int value)
@@ -44,5 +50,35 @@ public class GameController : MonoBehaviour
     {
         healthText.text = "x " + value.ToString();
         
+    }
+
+    public void PauseGame()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            isPaused = !isPaused;
+            pauseObj.SetActive(true);
+        }
+
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            pauseObj.SetActive(false);
+        }
+    }
+
+    public void GameOver()
+    {
+        gameoverObj.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
