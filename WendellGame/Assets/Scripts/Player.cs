@@ -18,11 +18,14 @@ public class Player : MonoBehaviour
     private Rigidbody2D rig;
     private Animator anim;
 
+    public Vector3 respawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        respawnPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         
         GameController.instance.UpdateLives(health);
     }
@@ -152,5 +155,20 @@ public class Player : MonoBehaviour
             isJumping = false;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "falldetector")
+        {
+            health -= 1;
+            GameController.instance.UpdateLives(health);
+            transform.position = respawnPoint;
+        }
+        else if (collider.gameObject.tag == "Checkpoint")
+        {
+            collider.gameObject.GetComponent<Checkpoint>().Activate();
+            respawnPoint = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y + 1, collider.gameObject.transform.position.z);
+        }
+    }
 }
-    
+
